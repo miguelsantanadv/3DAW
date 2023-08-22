@@ -9,7 +9,6 @@
         operador 2: <input type="text" name="op2">
         <br/>
 
-
   <form action="teste.php"><br>
 
       <input type="radio"  name="valor" value="soma">
@@ -27,7 +26,6 @@
   <input type="submit" value="calcular">
 
 </form>
-
 
 <?php
 
@@ -55,8 +53,8 @@ case "divisao":
             break;
 }
 
-            echo "<h1>Resuldado: $result </h1>";
+echo "<h1>Resuldado: $result </h1>";
 
-        ?>
+?>
     </body>
 </html>
