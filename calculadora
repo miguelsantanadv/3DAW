@@ -3,13 +3,12 @@
         <title>calculadora</title>
     </head>
     <body>
-        <h1>calculadora-SOMA</h1>
+        <h1>Calculadora</h1>
         <form action="teste.php" method="GET">
         operador 1: <input type="text" name="op1"><br>
-        operador 2: <input type="text" name="op2">
-        <br/>
+        operador 2: <input type="text" name="op2"><br>
 
-  <form action="teste.php"><br>
+  <form action="calculadora.php"><br>
 
       <input type="radio"  name="valor" value="soma">
       <label for="soma">soma</label><br>
@@ -32,7 +31,8 @@
             $valor= $_GET["valor"];
 switch($valor){
 
-case "soma":     $v1= $_GET["op1"];
+case "soma":    
+            $v1= $_GET["op1"];
             $v2= $_GET["op2"];
             $result = $v1+$v2;
             break;
