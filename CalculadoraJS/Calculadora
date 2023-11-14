@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+
+    <script>
+        function Multiplicacao(){
+            let var1 = document.getElementById("var1").value;
+            let var2 = document.getElementById("var2").value;
+            let resultado = var1 * var2;
+            
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+
+        function Divisao(){
+            let var1 = document.getElementById("var1").value;
+            let var2 = document.getElementById("var2").value;
+            let resultado = var1 / var2;
+
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+
+        function Soma(){
+            let var1 = document.getElementById("var1").value;
+            let var2 = document.getElementById("var2").value;
+            let resultado = parseInt(var1) + parseInt(var2);
+            
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+
+        function Subtracao(){
+            let var1 = document.getElementById("var1").value;
+            let var2 = document.getElementById("var2").value;
+            let resultado = var1 - var2;
+            
+            document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+        }
+    </script>
+</head>
+
+<body>
+    Digite o primeiro número <input type="number" id="var1">
+    <br>
+    Digite o segundo número <input type="number" id="var2">
+    <br><br>
+
+    <input type="button" value="Soma" onclick="Soma()">
+    <input type="button" value="Subtracao" onclick="Subtracao()">
+    <input type="button" value="Multiplicacao" onclick="Multiplicacao()">
+    <input type="button" value="Divisao" onclick="Divisao()">
+    <br><br>
+
+    <span id="resultado"></span>
+</body>
+</html>
