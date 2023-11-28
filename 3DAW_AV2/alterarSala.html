@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Sala</title>
+<script>
+    function alterarSala() {
+        let cpf = document.getElementById("cpf").value;
+        let sala = document.getElementById("sala").value;
+        let objForm2 = {"cpf":cpf,"sala":sala};
+        console.log("objForm2: " + objForm2);
+
+        let xmlhttp = new XMLHttpRequest();
+        console.log("1");
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("Chegou a resposta OK: " + this.responseText);
+                console.log("2");
+            } else
+            if (this.readyState < 4) {
+                console.log("3: " + this.readyState);
+            } else
+                console.log("Requisicao falhou: " + this.status);
+        }
+        console.log("4");
+        xmlhttp.open("POST", "alterarSala.php");
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("&cpf="+cpf + "&sala="+sala);
+        console.log("enviei form");
+        console.log("5");
+    }
+</script>
+</head>
+<body>
+    <h1>Preencha o CPF do candidato e a nova sala:</h1>
+    <form action="" method=POST name="formFiscal" id="formFiscal">
+        CPF: <input type=text name="cpf" id="cpf"> <br>
+        Sala: <input type=text name="sala" id="sala"> <br>
+        <br><br>
+        <input type="button" value="Alterar" id='btnAlterar' onclick="alterarSala();">
+    </form>
+    </body>
+    </html>
